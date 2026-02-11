@@ -3,6 +3,7 @@
   flex-wrap: wrap;
   gap: 16px;
   margin-top: 20px;
+  justify-content: center;
 }
 
 .card {
@@ -12,7 +13,10 @@
   background: rgb(227, 221, 232);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease;
-  width: 250px;
+
+  width: 100%; /* Hel bredd på mindre enheter.*/
+  max-width: 250px;
+  box-sizing: border-box;
 }
 
 .card:hover {
@@ -32,4 +36,21 @@
 
 .rating {
   font-weight: bold;
+}
+@media (max-width: 480px) {
+  .cards-container {
+    gap: 12px;
+  }
+
+  .card {
+    padding: 0.8rem;
+  }
+
+  .card h2 {
+    font-size: 1rem;
+  }
+
+  .card p {
+    font-size: 0.85rem;
+  }
 }
