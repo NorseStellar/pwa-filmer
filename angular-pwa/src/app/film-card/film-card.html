@@ -1,0 +1,10 @@
+<div class="card">
+  <h2>{{ film.titel }}</h2>
+
+  <p><strong>År:</strong> {{ film.ar }}</p>
+  <p><strong>Regissör:</strong> {{ film.regissor }}</p>
+  <p><strong>Skådespelare:</strong> {{ film.skadespelare }}</p>
+  <p class="rating">Rating: {{ film.rating }}</p>
+
+  <button class="delete" (click)="onDelete()">Ta bort</button>
+</div>

@@ -1,0 +1,95 @@
+<style>
+  :host {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  h1 {
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: -0.125rem;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  main {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    box-sizing: inherit;
+    position: relative;
+  }
+
+  .content {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 3rem;
+  }
+
+  .content h1 {
+    margin-top: 1.75rem;
+  }
+
+  .content p {
+    margin-top: 1.5rem;
+  }
+
+  @media screen and (max-width: 650px) {
+    .content {
+      flex-direction: column;
+      width: max-content;
+    }
+  }
+
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 20px;
+    justify-content: center;
+  }
+</style>
+
+<main class="main">
+  <div class="content">
+    <div class="left-side">
+      <h1>Filmfavoriterna</h1>
+
+      <div class="addFilmForm">
+        <h2>Lägg gärna till din favoritfilm 🎞️</h2>
+
+        <form (ngSubmit)="addFilm()" #filmForm="ngForm">
+          <input [(ngModel)]="newFilm.titel" name="titel" placeholder="Titel" required />
+          <input [(ngModel)]="newFilm.ar" name="ar" placeholder="År" />
+          <input [(ngModel)]="newFilm.regissor" name="regissor" placeholder="Regissör" />
+          <input
+            [(ngModel)]="newFilm.skadespelare"
+            name="skadespelare"
+            placeholder="Skådespelare"
+          />
+          <input [(ngModel)]="newFilm.rating" name="rating" placeholder="Rating" />
+          <!-- För framtida bruk.
+           <input [(ngModel)]="newFilm.trailerUrl" name="trailerUrl" placeholder="YouTube-länk" /> -->
+
+          <button type="submit">Spara</button>
+        </form>
+      </div>
+
+      <div class="cards">
+        <app-film-card *ngFor="let film of filmer()" [film]="film" (delete)="deleteFilm($event)">
+        </app-film-card>
+      </div>
+    </div>
+  </div>
+</main>
+
+<router-outlet />

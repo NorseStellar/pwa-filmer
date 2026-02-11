@@ -1,0 +1,23 @@
+{
+   "name": "filmer-api",
+   "version": "1.0.0",
+   "description": "En enkel angular-app som hämtar data med api",
+   "main": "server.js",
+   "scripts": {
+      "start": "node server.js",
+      "dev": "node server.js"
+   },
+   "keywords": [],
+   "author": "Camilla",
+   "license": "ISC",
+   "type": "commonjs",
+   "dependencies": {
+      "cors": "^2.8.6",
+      "dotenv": "^17.2.3",
+      "express": "^5.2.1",
+      "mongodb": "^7.0.0"
+   },
+   "devDependencies": {
+      "nodemon": "^3.1.11"
+   }
+}
