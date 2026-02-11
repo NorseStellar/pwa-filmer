@@ -17,7 +17,7 @@ export interface Film {
   providedIn: 'root',
 })
 export class Filmer {
-  private apiUrl = 'http://localhost:4000/filmer'; // Mitt API.
+  private apiUrl = 'https://pwa-filmer-api.onrender.com/filmer';
 
   constructor(private http: HttpClient) {}
 
